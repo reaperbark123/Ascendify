@@ -1,4 +1,3 @@
--- Tired of gate keeping really dont care
 local Library = {};
 local MobileUI = {};
 local MyAccent = Color3.fromRGB(242, 176, 255);
@@ -1222,6 +1221,8 @@ do -- //UI Stuff
                         if Key == 'MB1' or Key == 'MB2' then
                             return Key == 'MB1' and InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch)
                                 or Key == 'MB2' and InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton2);
+                        elseif string.find(Key, "Button") then
+                            return InputService:IsGamepadButtonDown(Enum.UserInputState.Gamepad1, Enum.KeyCode[KeyPicker.Value])
                         else
                             return InputService:IsKeyDown(Enum.KeyCode[KeyPicker.Value]);
                         end;
