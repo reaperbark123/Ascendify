@@ -1222,7 +1222,7 @@ do -- //UI Stuff
                             return Key == 'MB1' and InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch)
                                 or Key == 'MB2' and InputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton2);
                         elseif string.find(Key, "Button") then
-                            return InputService:IsGamepadButtonDown(Enum.UserInputState.Gamepad1, Enum.KeyCode[KeyPicker.Value])
+                            return InputService:IsGamepadButtonDown(Enum.UserInputType.Gamepad1, Enum.KeyCode[KeyPicker.Value])
                         else
                             return InputService:IsKeyDown(Enum.KeyCode[KeyPicker.Value]);
                         end;
