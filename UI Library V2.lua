@@ -1983,12 +1983,16 @@ do -- //UI Stuff
                     Library:UpdateDependencyBoxes();
                 end;
 
+                if Info.Buyer and Info.Buyer == false then
+                    Toggle:SetValue(false)
+                end
+                
                 ToggleRegion.InputBegan:Connect(function(Input, typing)
                     if typing then return end
                     if Input.UserInputType == Enum.UserInputType.MouseButton1 or Input.UserInputType == Enum.UserInputType.Touch and not Library:MouseIsOverOpenedFrame() then
                         if Info.Buyer and Info.Buyer == true or Info.Buyer == nil then
                             Toggle:SetValue(not Toggle.Value) -- Why was it not like this from the start?
-                            Library:AttemptSave();
+                            Library:AttemptSave(); 
                         else
                             if Info.BuyerNotify then
                                 Library:Notify("Buyer only feature", 5)
@@ -1996,7 +2000,7 @@ do -- //UI Stuff
                         end
                     end;
                 end);
-
+            -- make it where if not buyer then the text is grey
                 if Toggle.Risky then
                     Library:RemoveFromRegistry(ToggleLabel)
                     ToggleLabel.TextColor3 = Library.RiskColor
