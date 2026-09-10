@@ -2447,7 +2447,7 @@ do -- //UI Stuff
 
                     local Count = 0
                     local BatchCount = 0
-                    local BATCH_SIZE = 25
+                    local BATCH_SIZE = 17
 
                     for Idx, Value in next, Values do
                         Count += 1
