@@ -4882,7 +4882,7 @@ do
                         InputObj.UserInputType == Enum.UserInputType.Gamepad6 or
                         InputObj.UserInputType == Enum.UserInputType.Gamepad7 or
                         InputObj.UserInputType == Enum.UserInputType.Gamepad8 then
-                    KeyName = Input.KeyCode.Name; -- This will give the specific button on the gamepad (e.g., ButtonA, ButtonB)
+                    KeyName = InputObj.KeyCode.Name; -- This will give the specific button on the gamepad (e.g., ButtonA, ButtonB)
                 end
 
                 if KeyName then
