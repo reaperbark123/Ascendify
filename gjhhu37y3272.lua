@@ -4009,12 +4009,28 @@ do
             ["MB1"] = Enum.UserInputType.MouseButton1,
             ["MB2"] = Enum.UserInputType.MouseButton2,
             ["MB3"] = Enum.UserInputType.MouseButton3,
+            ['GP1'] = Enum.UserInputType.Gamepad1,
+            ['GP2'] = Enum.UserInputType.Gamepad2,
+            ['GP3'] = Enum.UserInputType.Gamepad3,
+            ['GP4'] = Enum.UserInputType.Gamepad4,
+            ['GP5'] = Enum.UserInputType.Gamepad5,
+            ['GP6'] = Enum.UserInputType.Gamepad6,
+            ['GP7'] = Enum.UserInputType.Gamepad7,
+            ['GP8'] = Enum.UserInputType.Gamepad8
         }
 
         local SpecialKeysInput = {
             [Enum.UserInputType.MouseButton1] = "MB1",
             [Enum.UserInputType.MouseButton2] = "MB2",
             [Enum.UserInputType.MouseButton3] = "MB3",
+            [Enum.UserInputType.Gamepad1] = 'GP1',
+            [Enum.UserInputType.Gamepad2] = 'GP2',
+            [Enum.UserInputType.Gamepad3] = 'GP3',
+            [Enum.UserInputType.Gamepad4] = 'GP4',
+            [Enum.UserInputType.Gamepad5] = 'GP5',
+            [Enum.UserInputType.Gamepad6] = 'GP6',
+            [Enum.UserInputType.Gamepad7] = 'GP7',
+            [Enum.UserInputType.Gamepad8] = 'GP8'
         }
 
         -- Modifiers
