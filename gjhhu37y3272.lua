@@ -4987,7 +4987,7 @@ do
             local Key = "Unknown"
             if SpecialKeysInput[CurrentInput.UserInputType] ~= nil then
                 Key = SpecialKeysInput[CurrentInput.UserInputType]
-            elseif CurrentInput.UserInputType == Enum.UserInputType.Keyboard then
+            elseif CurrentInput.UserInputType == Enum.UserInputType.Keyboard or CurrentInput.UserInputType == Enum.UserInputType.Gamepad1 then
                 Key = CurrentInput.KeyCode == Enum.KeyCode.Escape and "None" or CurrentInput.KeyCode.Name
             end
 
