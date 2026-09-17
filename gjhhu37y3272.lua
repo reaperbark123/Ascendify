@@ -4057,7 +4057,7 @@ do
                 if table.find(ActiveModifiers, Name) then
                     continue
                 end
-                if not UserInputService:IsKeyDown(Input) then
+                if not UserInputService:IsKeyDown(Input) or not UserInputService:IsGamepadButtonDown(Enum.UserInputType.Gamepad1, Input) then
                     continue
                 end
 
@@ -4097,6 +4097,8 @@ do
                     and not UserInputService:GetFocusedTextBox()
             elseif Input.UserInputType == Enum.UserInputType.Keyboard then
                 return UserInputService:IsKeyDown(Input.KeyCode) and not UserInputService:GetFocusedTextBox()
+            elseif Input.UserInputType == Enum.UserInputType.Gamepad1 then
+                return UserInputService:IsGamepadButtonDown(Enum.UserInputType.Gamepad1, Input.KeyCode) and not UserInputService:GetFocusedTextBox()
             else
                 return false
             end
@@ -4728,7 +4730,7 @@ do
                     return UserInputService:IsMouseButtonPressed(SpecialKeys[Key])
                         and not UserInputService:GetFocusedTextBox()
                 else
-                    return UserInputService:IsKeyDown(Enum.KeyCode[Key] :: any) and not UserInputService:GetFocusedTextBox()
+                    return (UserInputService:IsKeyDown(Enum.KeyCode[Key] :: any) or UserInputService:IsGamepadButtonDown(Enum.UserInputType.Gamepad1, Enum.KeyCode[Key])) and not UserInputService:GetFocusedTextBox()
                 end
             else
                 return KeyPicker.Toggled
@@ -4872,6 +4874,15 @@ do
                     else
                         KeyName = InputObj.KeyCode.Name
                     end
+                elseif Input.UserInputType == Enum.UserInputType.Gamepad1 or
+                        Input.UserInputType == Enum.UserInputType.Gamepad2 or
+                        Input.UserInputType == Enum.UserInputType.Gamepad3 or
+                        Input.UserInputType == Enum.UserInputType.Gamepad4 or
+                        Input.UserInputType == Enum.UserInputType.Gamepad5 or
+                        Input.UserInputType == Enum.UserInputType.Gamepad6 or
+                        Input.UserInputType == Enum.UserInputType.Gamepad7 or
+                        Input.UserInputType == Enum.UserInputType.Gamepad8 then
+                    KeyName = Input.KeyCode.Name; -- This will give the specific button on the gamepad (e.g., ButtonA, ButtonB)
                 end
 
                 if KeyName then
