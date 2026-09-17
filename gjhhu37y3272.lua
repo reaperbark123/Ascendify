@@ -4874,14 +4874,14 @@ do
                     else
                         KeyName = InputObj.KeyCode.Name
                     end
-                elseif Input.UserInputType == Enum.UserInputType.Gamepad1 or
-                        Input.UserInputType == Enum.UserInputType.Gamepad2 or
-                        Input.UserInputType == Enum.UserInputType.Gamepad3 or
-                        Input.UserInputType == Enum.UserInputType.Gamepad4 or
-                        Input.UserInputType == Enum.UserInputType.Gamepad5 or
-                        Input.UserInputType == Enum.UserInputType.Gamepad6 or
-                        Input.UserInputType == Enum.UserInputType.Gamepad7 or
-                        Input.UserInputType == Enum.UserInputType.Gamepad8 then
+                elseif InputObj.UserInputType == Enum.UserInputType.Gamepad1 or
+                        InputObj.UserInputType == Enum.UserInputType.Gamepad2 or
+                        InputObj.UserInputType == Enum.UserInputType.Gamepad3 or
+                        InputObj.UserInputType == Enum.UserInputType.Gamepad4 or
+                        InputObj.UserInputType == Enum.UserInputType.Gamepad5 or
+                        InputObj.UserInputType == Enum.UserInputType.Gamepad6 or
+                        InputObj.UserInputType == Enum.UserInputType.Gamepad7 or
+                        InputObj.UserInputType == Enum.UserInputType.Gamepad8 then
                     KeyName = Input.KeyCode.Name; -- This will give the specific button on the gamepad (e.g., ButtonA, ButtonB)
                 end
 
